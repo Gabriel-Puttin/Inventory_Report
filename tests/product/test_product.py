@@ -1,16 +1,15 @@
 from inventory_report.inventory.product import Product
 
-instruction = 'Local fechado à temperatura de 25°'
+instruction = "em local fechado à temperatura de 25°"
+correct_string = (
+    f"O produto FireTV fabricado em 04/04/2023 por Amazon com "
+    f"validade até 04/04/2050 precisa ser armazenado {instruction}."
+)
 
 
 def test_cria_produto():
-    'It class Product should return correct object'
-    product = Product(10, 'FireTV', 'Amazon', '04/04/2023', '04/04/2050',
-                      500, instruction)
-    assert product.id == 10
-    assert product.nome_do_produto == 'FireTV'
-    assert product.nome_da_empresa == 'Amazon'
-    assert product.data_de_fabricacao == '04/04/2023'
-    assert product.data_de_validade == '04/04/2050'
-    assert product.numero_de_serie == 500
-    assert product.instrucoes_de_armazenamento == instruction
+    "It class Product should return correct object"
+    product = Product(
+        10, "FireTV", "Amazon", "04/04/2023", "04/04/2050", 500, instruction
+    )
+    assert str(product) == correct_string
