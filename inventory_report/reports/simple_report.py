@@ -25,11 +25,11 @@ class SimpleReport:
         )["data_de_validade"]
 
         companies = Counter([product["nome_da_empresa"] for product in lista])
-        most_repet_companie = companies.most_common()[0][0]
+        most_repet_company = companies.most_common()[0][0]
 
         result = (
             f"Data de fabricação mais antiga: {max_fab_date}\n"
             f"Data de validade mais próxima: {min_valid_date}\n"
-            f"Empresa com mais produtos: {most_repet_companie}"
+            f"Empresa com mais produtos: {most_repet_company}"
             )
         return result
